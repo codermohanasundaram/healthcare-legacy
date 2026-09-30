@@ -1,0 +1,32 @@
+# Local runtime for the legacy app: MySQL 5.7 + Tomcat 8.5 (Java 8).
+# Build the WAR first:  mvn clean package
+services:
+  mysql:
+    image: mysql:5.7
+    platform: linux/amd64
+    environment:
+      MYSQL_ROOT_PASSWORD: root@123
+      MYSQL_DATABASE: healthcare
+      MYSQL_USER: healthcare_app
+      MYSQL_PASSWORD: "Hc@2015!"
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./database/healthcare.sql:/docker-entrypoint-initdb.d/01-healthcare.sql:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      interval: 5s
+      retries: 20
+
+  tomcat:
+    image: tomcat:8.5-jdk8
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      # no '&' here - catalina.sh evals CATALINA_OPTS and would treat it as a shell operator
+      CATALINA_OPTS: "-Ddb.url=jdbc:mysql://mysql:3306/healthcare?useSSL=false"
+    ports:
+      - "8090:8080"
+    volumes:
+      - ./target/healthcare-legacy.war:/usr/local/tomcat/webapps/healthcare.war:ro

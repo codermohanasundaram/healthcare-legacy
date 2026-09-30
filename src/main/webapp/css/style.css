@@ -1,0 +1,174 @@
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+#header {
+    background-color: #003366;
+    color: #ffffff;
+    padding: 10px 15px;
+    height: 30px;
+}
+
+#header .logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#header .subtitle {
+    font-size: 12px;
+    margin-left: 10px;
+    color: #99ccff;
+}
+
+#header .userinfo {
+    float: right;
+    margin-top: 5px;
+}
+
+#header a {
+    color: #ffcc00;
+}
+
+#nav {
+    background-color: #336699;
+    padding: 6px 15px;
+}
+
+#nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+#nav a:hover {
+    text-decoration: underline;
+}
+
+#content {
+    background-color: #ffffff;
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid #cccccc;
+    min-height: 400px;
+}
+
+#footer {
+    text-align: center;
+    color: #666666;
+    font-size: 10px;
+    padding: 10px;
+}
+
+h2 {
+    color: #003366;
+    border-bottom: 2px solid #336699;
+    padding-bottom: 4px;
+}
+
+h3 {
+    color: #336699;
+}
+
+table.grid {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.grid th {
+    background-color: #336699;
+    color: #ffffff;
+    padding: 5px;
+    text-align: left;
+}
+
+table.grid td {
+    border: 1px solid #dddddd;
+    padding: 4px;
+}
+
+table.grid tr.odd {
+    background-color: #eef3f8;
+}
+
+table.form td {
+    padding: 4px;
+}
+
+table.form td.label {
+    font-weight: bold;
+    text-align: right;
+    width: 180px;
+}
+
+.message {
+    background-color: #ddffdd;
+    border: 1px solid #009900;
+    color: #006600;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.error {
+    background-color: #ffdddd;
+    border: 1px solid #cc0000;
+    color: #990000;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.status-SCHEDULED { color: #0066cc; font-weight: bold; }
+.status-COMPLETED { color: #009900; font-weight: bold; }
+.status-CANCELLED { color: #999999; text-decoration: line-through; }
+.status-PENDING   { color: #cc6600; font-weight: bold; }
+.status-PAID      { color: #009900; font-weight: bold; }
+
+.dashboard-box {
+    float: left;
+    width: 180px;
+    height: 70px;
+    margin: 0 15px 15px 0;
+    padding: 10px;
+    border: 1px solid #336699;
+    background-color: #eef3f8;
+    text-align: center;
+}
+
+.dashboard-box .number {
+    font-size: 28px;
+    font-weight: bold;
+    color: #003366;
+}
+
+.clear {
+    clear: both;
+}
+
+.login-box {
+    width: 320px;
+    margin: 100px auto;
+    background-color: #ffffff;
+    border: 1px solid #336699;
+    padding: 20px;
+}
+
+input[type=submit], input[type=button] {
+    background-color: #336699;
+    color: #ffffff;
+    border: 1px solid #003366;
+    padding: 4px 12px;
+    cursor: pointer;
+}
+
+.invoice {
+    width: 700px;
+    border: 1px solid #999999;
+    padding: 20px;
+}
+
+@media print {
+    #header, #nav, #footer, .noprint { display: none; }
+}

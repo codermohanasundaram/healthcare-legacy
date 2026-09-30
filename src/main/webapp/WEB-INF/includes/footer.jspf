@@ -1,0 +1,8 @@
+</div>
+<div id="footer">
+    &copy; 2009-2016 <%= application.getInitParameter("hospitalName") %> |
+    Version <%= application.getInitParameter("appVersion") %> |
+    For support call IT Helpdesk ext. 4455
+</div>
+</body>
+</html>
